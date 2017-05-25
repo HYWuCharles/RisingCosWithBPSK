@@ -31,7 +31,16 @@ for i = 0.25:0.05:0.75
    plot(1:1:length(temp),temp,'r-')
    subplot(3,1,3)
    stem(1:1:length(data),data)
+   %title(i)
 end
+
+figure                                                                                                                                                                                                                                              
+for i = 0.25:0.05:0.75
+   b1 = firrcos(48,0.5,i,rate,'rolloff','normal');
+   plot(b1)
+   hold on
+end
+title('滚降滤波器')
 
 %基带调制
 f = 20;
